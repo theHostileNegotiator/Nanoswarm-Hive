@@ -5,7 +5,7 @@ namespace Nanocore.Sage
     public class Registry
     {
         private const string _mainRegistryKey = "SOFTWARE\\Electronic Arts\\Electronic Arts\\Command and Conquer 3 Kanes Wrath";
-        private const string _secondaryRegistryKey = "SOFTWARE\\Electronic Arts\\Electronic Arts\\Command and Conquer 3 Kanes Wrath";
+        private const string _secondaryRegistryKey = "SOFTWARE\\Electronic Arts\\Command and Conquer 3 Kanes Wrath";
 
         public string UserDataLeafName { get; } = "Command & Conquer 3 Kane's Wrath";
         public string ScreenshotsFolderName { get; } = "Screenshots";
@@ -17,7 +17,7 @@ namespace Nanocore.Sage
         public int Version { get; } = 0x00010000;
         public uint Hash { get; } = 0x00000000u;
         public string Language { get; } = "english";
-        public string BaseURL { get; } = "http://na.llnet.eadownloads.ea.com/u/f/eagames/redalert3/patches/";
+        public string BaseURL { get; } = "http://servserv.generals.ea.com/servserv/cnc3_ep1";
         public string InstallPath { get; } = null;
         public string Readme { get; } = null;
         public string DisplayName { get; } = "Command & Conquer 3 Kanes Wrath";

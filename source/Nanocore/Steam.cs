@@ -9,7 +9,7 @@ namespace Nanocore
     public static class Steam
     {
         private static readonly Tracer _tracer = Tracer.GetTracer(nameof(Steam), "Vital steam hook.");
-        private static readonly byte[] _jump = new byte[] { 0xE9, 0xD4, 0xBF, 0xBB, 0xFF };
+        private static readonly byte[] _jump = new byte[] { 0xE9, 0x71, 0xBF, 0x7B, 0xFF };
 
         public static unsafe bool ModifyEP(System.Diagnostics.Process process)
         {

@@ -4,10 +4,10 @@ namespace Nanocore.Sage
 {
     public class Registry
     {
-        private const string _mainRegistryKey = "SOFTWARE\\Electronic Arts\\Electronic Arts\\Red Alert 3";
-        private const string _secondaryRegistryKey = "SOFTWARE\\Electronic Arts\\Electronic Arts\\Red Alert 3";
+        private const string _mainRegistryKey = "SOFTWARE\\Electronic Arts\\Electronic Arts\\Command and Conquer 3 Kanes Wrath";
+        private const string _secondaryRegistryKey = "SOFTWARE\\Electronic Arts\\Electronic Arts\\Command and Conquer 3 Kanes Wrath";
 
-        public string UserDataLeafName { get; } = "Red Alert 3";
+        public string UserDataLeafName { get; } = "Command & Conquer 3 Kane's Wrath";
         public string ScreenshotsFolderName { get; } = "Screenshots";
         public string ReplayFolderName { get; } = "Replays";
         public string ProfileFolderName { get; } = "Profiles";
@@ -20,7 +20,7 @@ namespace Nanocore.Sage
         public string BaseURL { get; } = "http://na.llnet.eadownloads.ea.com/u/f/eagames/redalert3/patches/";
         public string InstallPath { get; } = null;
         public string Readme { get; } = null;
-        public string DisplayName { get; } = "Red Alert 3";
+        public string DisplayName { get; } = "Command & Conquer 3 Kanes Wrath";
         public string Ergc { get; } = "unknown";
 
         public Registry()
@@ -79,7 +79,7 @@ namespace Nanocore.Sage
                 {
                     BaseURL = str;
                 }
-                if (RegistryClass.GetStringW(registryKey, "Install Dir", out str))
+                if (RegistryClass.GetStringW(registryKey, "InstallPath", out str))
                 {
                     InstallPath = str;
                 }

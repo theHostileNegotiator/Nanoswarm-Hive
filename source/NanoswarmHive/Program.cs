@@ -127,7 +127,7 @@ namespace NanoswarmHive
             int overallTries = 0;
             int tries = 0;
             Registry registry = new Registry();
-            string executablePath = System.IO.Path.Combine(registry.InstallPath, "data", "ra3_1.12.game");
+            string executablePath = System.IO.Path.Combine(registry.InstallPath, "RetailExe", "1.2", "cnc3ep1.dat");
             ExecutableType executableType = ExecutableType.Unknown;
             using (System.IO.Stream stream = new System.IO.FileStream(executablePath, System.IO.FileMode.Open, System.IO.FileAccess.Read, System.IO.FileShare.Read))
             {
@@ -136,21 +136,21 @@ namespace NanoswarmHive
                 uint hash = Nanocore.Core.FastHash.GetHashCode(buffer);
                 switch (hash)
                 {
-                    case 0xCFAAD44Bu:
-                    case 0xE6D223E6u:
-                    case 0xCF5817CCu:
+                    // case 0xCFAAD44Bu:
+                    // case 0xE6D223E6u:
+                     case 0x2491CCEDu:
                         executableType = ExecutableType.Steam;
                         break;
-                    case 0xE7AF6A35u:
-                    case 0x2F121290u:
-                        executableType = ExecutableType.Origin;
-                        break;
-                    case 0xA05DEB39: // this has the 4gb thing applied, need to check the original
-                        executableType = ExecutableType.Retail;
-                        break;
-                    case 0xBFE68CAD: // should I care? this is mostly here because origins and reloaded exe have the same size
-                        executableType = ExecutableType.ReLOADeD;
-                        break;
+                    // case 0xE7AF6A35u:
+                    // case 0x2F121290u:
+                    //    executableType = ExecutableType.Origin;
+                    //    break;
+                    // case 0xA05DEB39: // this has the 4gb thing applied, need to check the original
+                    //    executableType = ExecutableType.Retail;
+                    //    break;
+                    // case 0xBFE68CAD: // should I care? this is mostly here because origins and reloaded exe have the same size
+                    //    executableType = ExecutableType.ReLOADeD;
+                    //    break;
                 }
             }
             if (executableType == ExecutableType.Unknown)
@@ -180,7 +180,7 @@ namespace NanoswarmHive
                 }
                 try
                 {
-                    Kernel32.CreateProcessW(null, $"\"{executablePath}\" {string.Join(" ", args)} -config \"{config ?? System.IO.Path.Combine(registry.InstallPath, $"RA3_{registry.Language}_1.12.skudef")}\" {(modconifg is null ? string.Empty : $"-modconfig \"{modconifg}\"")}",
+                    Kernel32.CreateProcessW(null, $"\"{executablePath}\" {string.Join(" ", args)} -config \"{config ?? System.IO.Path.Combine(registry.InstallPath, $"CNC3EP1_{registry.Language}_1.2.skudef")}\" {(modconifg is null ? string.Empty : $"-modconfig \"{modconifg}\"")}",
                                             IntPtr.Zero,
                                             IntPtr.Zero,
                                             true,

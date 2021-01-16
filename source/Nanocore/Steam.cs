@@ -9,7 +9,7 @@ namespace Nanocore
     public static class Steam
     {
         private static readonly Tracer _tracer = Tracer.GetTracer(nameof(Steam), "Vital steam hook.");
-        private static readonly byte[] _jump = new byte[] { 0xE9, 0x9B, 0x86, 0x79, 0xFF };
+        private static readonly byte[] _jump = new byte[] { 0xE9, 0xD4, 0xBF, 0xBB, 0xFF };
 
         public static unsafe bool ModifyEP(System.Diagnostics.Process process)
         {
@@ -23,7 +23,7 @@ namespace Nanocore
             byte* pCurrentModule = (byte*)module.BaseAddress.ToPointer();
             using (Stream stream = new UnmanagedMemoryStream(pCurrentModule, module.ModuleMemorySize, module.ModuleMemorySize, FileAccess.ReadWrite))
             {
-                stream.Position = 0x0093b2ed;
+                stream.Position = 0x0084e2ed;
                 stream.Write(_jump, 0, _jump.Length);
             }
             return true;
